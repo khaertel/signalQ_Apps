@@ -1,0 +1,26 @@
+{
+	"name": "stolz/assets",
+	"description": "An ultra-simple-to-use assets management library",
+	"keywords": ["assets", "asset", "css", "js", "javascript", "pipeline", "minify", "laravel", "agnostic"],
+	"authors": [
+		{
+			"name": "Stolz",
+			"homepage": "https://github.com/Stolz/Assets",
+			"role": "developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0",
+		"mrclay/minify": "~2.1"
+	},
+	"suggest": {
+		"laravel/laravel": "Included ServiceProvider and Facade to work out of the box with Laravel"
+	},
+	"autoload": {
+		"psr-0": {
+			"Stolz\\Assets": "src/"
+		}
+	},
+	"minimum-stability": "dev",
+	"license": "MIT"
+}
