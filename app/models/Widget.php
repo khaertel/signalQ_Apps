@@ -10,7 +10,11 @@ class Widget extends Eloquent {
 	}
 
 	public function dashboards() {
-		return $this->belongsToMany('Dashboard');
+		return $this->belongsToMany('Dashboard', 'widgetInstances');
+	}
+	
+	public function widgetInstances() {
+		return $this->hasMany('WidgetInstance');
 	}
 	
 	/**

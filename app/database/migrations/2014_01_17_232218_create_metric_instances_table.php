@@ -18,6 +18,7 @@ class CreateMetricInstancesTable extends Migration {
 			$table->string('parameters', 500);
 			$table->enum('alert_type', array('undef','gtoreq', 'ltoreq','none'))->nullable()->default(NULL);
 			$table->float('alert_threshold')->nullable();
+			$table->integer('updates');
 			$table->integer('widgetInstance_id')->unsigned()->index();
 			$table->foreign('widgetInstance_id')->references('id')->on('widgetInstances');
 			$table->timestamps();

@@ -17,6 +17,10 @@ class WidgetInstance extends Eloquent implements Presentable {
 		return $this->belongsTo('Dashboard');
 	}
 
+	public function widget() {
+		return $this->belongsTo('Widget');
+	}
+
 	public function getPresenter()
 	{
 	    return new WidgetInstancePresenter($this);

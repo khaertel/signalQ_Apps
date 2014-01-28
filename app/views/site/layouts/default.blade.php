@@ -36,6 +36,9 @@
 				<a href="{{{ URL::to('user') }}}">Logged in as {{{ Auth::user()->username }}}</a>
 				<a href="{{{ URL::to('user/logout') }}}">Logout</a>
 			@else
+				<a href="{{{ URL::to('/') }}}" class="home_button"></a>
+				<a href="">Client Directory</a>
+				<a href="{{{ URL::to('user/login') }}}">Login</a>
 			@endif
 		</div>
 	
@@ -49,17 +52,18 @@
 
 	<!-- Javascripts
 	================================================== -->	
+	{{ Assets::js() }}
+
+	<script type="text/javascript">
+		$('.wysihtml5').wysihtml5();
+	    $(prettyPrint);
+	</script>
+
 	<script src="{{ URL::to('/') }}/assets/js/jquery.min.js"></script>
 	<script src="{{ URL::to('/') }}/assets/js/jquery.labelify.js" type="text/javascript"></script>
 	<script src="{{ URL::to('/') }}/assets/js/jquery.colorbox-min.js" type="text/javascript"></script>
 	<script src="{{ URL::to('/') }}/assets/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
 	<script src="{{ URL::to('/') }}/assets/js/base.js" type="text/javascript"></script>
-	{{ Assets::js() }}
-
-    <script type="text/javascript">
-    	$('.wysihtml5').wysihtml5();
-        $(prettyPrint);
-    </script>
 
     @yield('scripts')
 

@@ -145,6 +145,9 @@ class UserController extends BaseController {
         return View::make('site/user/create');
     }
 
+	public function postCreate() {
+		
+	}
 
     /**
      * Displays the login form

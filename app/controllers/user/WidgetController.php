@@ -120,19 +120,20 @@ class WidgetController extends BaseController {
 			//get widget
 			$widget = Widget::find($instance);
 
-			Log::info('Attaching:'.$instance.' name '.$widget->name);
+			Log::info('Attaching:'.$instance.' name '.$widget->name . $dashboard->id);
 
 			//get Widget's metrics
 			$metrics = $widget->metrics;
 			
 			//inserts a new widgetInstance (dashboard_widget)
-			$dashboard->widgets()->attach($instance, array('name' => $widget->name));
+			$dashboard->widgets()->attach($instance, array('name' => $widget->name, 'clone' => 0));
 
 			//create new widget 'master' instance
 			$widgetInstance = WidgetInstance::where('dashboard_id', '=', $dashboard->id)
 											->where('widget_id', '=', $instance)
 											->where('clone', '=', 0)->first();
 			
+			Log::info('WI'.$widgetInstance);
 			
 			//cycle through metrics and create an instance
 			foreach ($metrics as $metric) {

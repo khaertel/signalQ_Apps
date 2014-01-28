@@ -18,11 +18,11 @@ class CreateWidgetInstancesTable extends Migration {
 			$table->integer('widget_id')->unsigned()->index();
 			$table->foreign('dashboard_id')->references('id')->on('dashboards');
 			$table->foreign('widget_id')->references('id')->on('widgets');
+			$table->string('name', 100);
 			$table->smallInteger('active')->Default(0);
-			$table->integer('updates');
 			$table->integer('size')->default(11);
 			$table->integer('position')->nullable();
-			$table->integer('clone')->nullable();
+			$table->integer('clone')->nullable()->default(0);
 		});
 	}
 

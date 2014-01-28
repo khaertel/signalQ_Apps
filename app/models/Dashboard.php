@@ -13,7 +13,7 @@ class Dashboard extends Eloquent implements Presentable {
 	}
 	
 	public function widgets() {
-	    return $this->belongsToMany('Widget');
+	    return $this->belongsToMany('Widget', 'widgetInstances');
 	}
 	
 	public function widgetInstances() {

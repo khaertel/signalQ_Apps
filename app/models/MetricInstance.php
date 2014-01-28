@@ -24,6 +24,7 @@ class MetricInstance extends Eloquent implements Presentable {
 	    return new MetricInstancePresenter($this);
 	}
 	
+	//Populates an instance with the default value from the master Metric
 	public function populate(Metric $metric) {
 		$user_p = json_decode($metric->user_parameters, true);
 		$system_p = json_decode($metric->system_parameters, true);
@@ -32,6 +33,7 @@ class MetricInstance extends Eloquent implements Presentable {
 		
 		Log::info('U:' . $this->parameters);
 		
+		$this->updates = $metric->updates_default;
 		$this->name = $metric->name;	
 		return $this;					
 	}
