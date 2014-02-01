@@ -1,22 +1,30 @@
 {
-    "name": "andrew13/Laravel-4-Bootstrap-Starter-Site",
-    "description": "Laravel 4 Starter Site",
-    "keywords": ["laravel","Starter Site"],
-    "license": "MIT",
+    "name": "QDash PortaSwitch Monitoring Suite",
+    "description": "QDash PortaSwitch Monitoring Suite",
+    "keywords": ["qdash","PortaSwitch","signalq"],
+    "license": "Propietory",
     "authors": [
         {
-            "name": "Andrew Elkins",
-            "homepage": "http://www.andrewelkins.com"
+            "name": "signalQ Solutions",
+            "homepage": "http://www.signalq.ca"
         }
     ],
+	"repositories": [
+	        {
+	            "type": "vcs",
+	            "url": "https://github.com/Zizaco/ardent.git"
+	        }
+	],
 	"require": {
 		"laravel/framework": "4.1.*",
+		"laravelbook/ardent": "dev-has-session-fix",
 		"zizaco/confide": "dev-master",
 		"zizaco/entrust": "dev-master",
 		"robclancy/presenter": "1.2.*",
         "j20/php-uuid": "dev-master",
         "bllim/datatables": "*",
-		"stolz/assets" : "dev-master"
+		"stolz/assets" : "dev-master",
+		"anahkiasen/rocketeer" : "dev-master"
 	},
 	"require-dev": {
         "way/generators": "dev-master",
@@ -49,7 +57,7 @@
 		]
 	},
 	"config": {
-		"preferred-install": "dist"
+		"preferred-install": "source"
 	},
 	"minimum-stability": "dev"
 }

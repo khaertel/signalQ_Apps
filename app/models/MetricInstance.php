@@ -15,7 +15,7 @@ class MetricInstance extends Eloquent implements Presentable {
 	}
 	
 	public function widgetData() {
-		return $this->hasMany('WidgetData');
+		return $this->hasMany('WidgetData', 'metricInstance_id');
 	}
 	
 	//set up presenter

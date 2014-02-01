@@ -89,14 +89,16 @@ Entrust::routeNeedsPermission( 'admin/roles*', 'manage_all', Redirect::to('/admi
 |
 */
 
-Route::filter('csrf', function()
+if (! Request::is('api/*'))
 {
-	if (Session::getToken() != Input::get('csrf_token') &&  Session::getToken() != Input::get('_token'))
+	Route::filter('csrf', function()
 	{
-		throw new Illuminate\Session\TokenMismatchException;
-	}
-});
-
+		if (Session::getToken() != Input::get('csrf_token') &&  Session::getToken() != Input::get('_token'))
+		{
+			throw new Illuminate\Session\TokenMismatchException;
+		}
+	});
+}
 /*
 |--------------------------------------------------------------------------
 | Language

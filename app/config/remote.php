@@ -13,7 +13,7 @@ return array(
         |
         */
 
-        'default' => 'production',
+        'default' => 'staging',
 
         /*
         |--------------------------------------------------------------------------
@@ -28,13 +28,13 @@ return array(
 
         'connections' => array(
 
-                'production' => array(
-                        'host'      => '',
-                        'username'  => '',
+                'staging' => array(
+                        'host'      => 'signalq.ca',
+                        'username'  => 'signalqc',
                         'password'  => '',
-                        'key'       => '',
-                        'keyphrase' => '',
-                        'root'      => '/var/www',
+                        'key'       => '/Users/klaushaertel/.ssh/id_rsa',
+                        'keyphrase' => 'ssh for signalq.ca',
+                        'root'      => '/home/signalqc/staging',
                 ),
 
         ),
@@ -52,7 +52,7 @@ return array(
 
         'groups' => array(
 
-                'web' => array('production')
+                'web' => array('staging')
 
         ),
 

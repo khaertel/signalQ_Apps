@@ -96,10 +96,12 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('dashboard/widgets/{winstance}/edit', 'WidgetController@getEdit');
 });
 
-Route::group(array('prefix' => 'api'), function() 
+// API routes
+Route::group(array('prefix' => 'api/v1'), function() 
 {
 	Route::any('config', 'APIController@getConfig');
-	Route::any('customer/{user}/{updates}', 'APIController@getMetricInstances');	
+	Route::any('customer/{user}/{updates}', 'APIController@getMetricInstances');
+	Route::post('values/{minstance}', 'APIController@postValue');	
 });
 
 /** ------------------------------------------

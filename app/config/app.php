@@ -116,11 +116,13 @@ return array(
 		'Illuminate\Remote\RemoteServiceProvider',
 		
         /* Additional Providers */
+        'Rocketeer\RocketeerServiceProvider',
         'Zizaco\Confide\ConfideServiceProvider', // Confide Provider
         'Zizaco\Entrust\EntrustServiceProvider', // Entrust Provider for roles
         'Robbo\Presenter\PresenterServiceProvider', // Presenter
         'Bllim\Datatables\DatatablesServiceProvider', // Datatables
         'Stolz\Assets\ManagerServiceProvider',
+        'Rocketeer\RocketeerServiceProvider',
 
         /* Uncomment for use in development */
         'Way\Generators\GeneratorsServiceProvider', // Generators
@@ -199,6 +201,7 @@ return array(
         'String'          => 'Andrew13\Helpers\String', // String
         'Carbon'          => 'Carbon\Carbon', // Carbon
         'Datatables'      => 'Bllim\Datatables\Datatables', // DataTables
+        'Rocketeer' 	  => 'Rocketeer\Facades\Rocketeer',
 
     ),
 
